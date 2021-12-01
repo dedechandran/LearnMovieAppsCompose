@@ -2,6 +2,7 @@
 buildscript {
     apply from: "$rootDir/dependencies.gradle"
     apply from: "$rootDir/keystore.gradle"
+    apply from: "$rootDir/versioning.gradle"
 
     repositories {
         google()
