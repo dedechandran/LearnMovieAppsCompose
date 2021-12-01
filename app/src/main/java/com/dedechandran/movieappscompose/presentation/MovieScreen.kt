@@ -3,7 +3,6 @@ package com.dedechandran.movieappscompose.presentation
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ListItem
@@ -17,7 +16,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.dedechandran.movieappscompose.domain.Movie
 
 @ExperimentalMaterialApi
 @Composable

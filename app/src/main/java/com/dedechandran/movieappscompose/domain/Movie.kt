@@ -13,7 +13,6 @@ data class Movie(
 
 )
 
-
 fun MovieResponse.toDomain() = results.map {
     Movie(
         id = it.id,

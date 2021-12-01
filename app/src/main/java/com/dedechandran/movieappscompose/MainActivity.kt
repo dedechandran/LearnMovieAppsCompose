@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MovieAppsComposeTheme {
+            MovieAppsComposeTheme{
                 val movieBottomNavItems = listOf(
                     MovieBottomNavItem(
                         label = "Movie",

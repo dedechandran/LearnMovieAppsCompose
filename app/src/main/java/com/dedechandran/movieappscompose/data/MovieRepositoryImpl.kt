@@ -5,10 +5,8 @@ import com.dedechandran.movieappscompose.domain.MovieRepository
 import com.dedechandran.movieappscompose.domain.toDomain
 import com.dedechandran.movieappscompose.network.NetworkResponse
 import com.dedechandran.movieappscompose.utils.ErrorCode
-import com.dedechandran.movieappscompose.utils.ErrorData
 import com.dedechandran.movieappscompose.utils.Result
 import javax.inject.Inject
-
 
 class MovieRepositoryImpl @Inject constructor(private val movieService: MovieService) :
     MovieRepository {

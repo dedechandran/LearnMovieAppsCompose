@@ -4,7 +4,6 @@ import com.dedechandran.movieappscompose.di.DispatcherDefault
 import com.dedechandran.movieappscompose.di.DispatcherIO
 import com.dedechandran.movieappscompose.di.DispatcherMain
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 class AppDispatcher @Inject constructor(

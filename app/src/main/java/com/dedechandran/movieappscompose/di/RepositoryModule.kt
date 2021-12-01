@@ -15,5 +15,4 @@ object RepositoryModule {
     fun provideMovieRepository(movieRepositoryImpl: MovieRepositoryImpl): MovieRepository {
         return movieRepositoryImpl
     }
-
 }

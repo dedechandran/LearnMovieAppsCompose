@@ -7,7 +7,7 @@ import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 import javax.inject.Inject
 
-class NetworkResponseAdapterFactory @Inject constructor(): CallAdapter.Factory() {
+class NetworkResponseAdapterFactory @Inject constructor() : CallAdapter.Factory() {
     override fun get(
         returnType: Type,
         annotations: Array<out Annotation>,
@@ -15,7 +15,7 @@ class NetworkResponseAdapterFactory @Inject constructor(): CallAdapter.Factory()
     ): CallAdapter<*, *>? {
 
         // suspend function wrap the response type in call
-        if (Call::class.java != getRawType(returnType)){
+        if (Call::class.java != getRawType(returnType)) {
             return null
         }
 
@@ -40,6 +40,5 @@ class NetworkResponseAdapterFactory @Inject constructor(): CallAdapter.Factory()
         val errorBodyConverter = retrofit.nextResponseBodyConverter<Any>(null, errorBodyType, annotations)
 
         return NetworkResponseAdapter<Any, Any>(successBodyType, errorBodyConverter)
-
     }
 }

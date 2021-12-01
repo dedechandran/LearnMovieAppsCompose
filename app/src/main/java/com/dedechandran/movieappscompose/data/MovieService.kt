@@ -7,5 +7,4 @@ interface MovieService {
 
     @GET("movie/popular")
     suspend fun getLatestMovies(): GenericResponse<MovieResponse>
-
 }

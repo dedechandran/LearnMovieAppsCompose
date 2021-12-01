@@ -14,7 +14,6 @@ class NetworkResponseCall<S : Any, E : Any> constructor(
     private val errorConverter: Converter<ResponseBody, E>
 ) : Call<NetworkResponse<S, E>> {
 
-
     override fun enqueue(callback: Callback<NetworkResponse<S, E>>) {
         return delegate.enqueue(object : Callback<S> {
             override fun onResponse(call: Call<S>, response: Response<S>) {
@@ -63,7 +62,7 @@ class NetworkResponseCall<S : Any, E : Any> constructor(
             }
 
             override fun onFailure(call: Call<S>, t: Throwable) {
-                val networkResponse = when(t){
+                val networkResponse = when (t) {
                     is IOException -> NetworkResponse.NetworkError(t)
                     else -> NetworkResponse.UnknownError(t)
                 }
@@ -72,7 +71,6 @@ class NetworkResponseCall<S : Any, E : Any> constructor(
                     Response.success(networkResponse)
                 )
             }
-
         })
     }
 

@@ -15,5 +15,4 @@ object ServiceModule {
     fun provideMovieService(retrofit: Retrofit): MovieService {
         return retrofit.create(MovieService::class.java)
     }
-
 }

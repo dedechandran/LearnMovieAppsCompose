@@ -5,7 +5,6 @@ import java.io.IOException
 
 typealias GenericResponse<S> = NetworkResponse<S, GenericApiError>
 
-
 sealed class NetworkResponse<out T : Any, out U : Any> {
 
     data class Success<T : Any>(val body: T) : NetworkResponse<T, Nothing>()
@@ -16,7 +15,6 @@ sealed class NetworkResponse<out T : Any, out U : Any> {
 
     data class UnknownError(val error: Throwable?) : NetworkResponse<Nothing, Nothing>()
 }
-
 
 data class GenericApiError(
     @SerializedName("status_message")
