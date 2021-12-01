@@ -1,0 +1,23 @@
+ext {
+    def rawBuildNumber = System.getenv("BITRISE_BUILD_NUMBER") ?: "0"
+    def buildNumber = Integer.parseInt(rawBuildNumber)
+
+    def appVersions = [
+            "major": 0,
+            "minor": 1,
+            "patch": buildNumber
+    ]
+
+    def generateVersionName = {
+        def versionName = "${appVersions.major}.${appVersions.minor}.${appVersions.patch}"
+        return "${versionName}"
+    }
+
+    def generateVersionCode = {
+        def versionCode = appVersions.major * 100_000 + appVersions.minor * 1_000 + appVersions.patch
+        return versionCode
+    }
+
+    appVersionName = generateVersionName()
+    appVersionCode = generateVersionCode()
+}
