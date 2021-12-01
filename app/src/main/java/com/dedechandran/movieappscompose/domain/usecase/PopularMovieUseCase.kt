@@ -17,5 +17,4 @@ class PopularMovieUseCase @Inject constructor(
             movieRepository.getLatestMovies()
         }
     }
-
 }
