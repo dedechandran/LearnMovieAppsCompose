@@ -6,17 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -40,7 +31,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MovieAppsComposeTheme{
+            MovieAppsComposeTheme {
                 val movieBottomNavItems = listOf(
                     MovieBottomNavItem(
                         label = "Movie",
@@ -77,19 +68,19 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.Movie.route) {
                             // Movie Content
-                            Box(modifier = Modifier.fillMaxSize()) {
+                            Box(modifier = Modifier.fillMaxSize()){
                                 MovieScreen(navController = navController)
                             }
                         }
                         composable(Screen.TvShow.route) {
                             // Tv Show Content
-                            Box(modifier = Modifier.fillMaxSize()) {
+                            Box(modifier = Modifier.fillMaxSize()){
                                 Text("Tv Show Screen")
                             }
                         }
                         composable(Screen.Favorite.route) {
                             // Favorite Content
-                            Box(modifier = Modifier.fillMaxSize()) {
+                            Box(modifier = Modifier.fillMaxSize()){
                                 Text("Favorite Screen")
                             }
                         }
