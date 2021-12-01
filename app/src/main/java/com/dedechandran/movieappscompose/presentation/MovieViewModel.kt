@@ -15,27 +15,24 @@ class MovieViewModel @Inject constructor(private val getPopularMovieUseCase: Pop
     val movieUiState = MutableStateFlow(MovieUiState(loading = true))
 
     init {
-//        viewModelScope.launch {
-//            val result = getPopularMovieUseCase.invoke()
-//            when(result){
-//                is Result.Success -> {
-//                    movieUiState.value = movieUiState.value.copy(
-//                        loading = false,
-//                        movieList = result.data,
-//                        error = false
-//                    )
-//                }
-//                is Result.Failure -> {
-//                    movieUiState.value = movieUiState.value.copy(
-//                        loading = false,
-//                        movieList = emptyList(),
-//                        error = true
-//                    )
-//                }
-//            }
-//        }
+        viewModelScope.launch {
+            val result = getPopularMovieUseCase.invoke()
+            when (result) {
+                is Result.Success -> {
+                    movieUiState.value = movieUiState.value.copy(
+                        loading = false,
+                        movieList = result.data,
+                        error = false
+                    )
+                }
+                is Result.Failure -> {
+                    movieUiState.value = movieUiState.value.copy(
+                        loading = false,
+                        movieList = emptyList(),
+                        error = true
+                    )
+                }
+            }
+        }
     }
-
-
-
 }
