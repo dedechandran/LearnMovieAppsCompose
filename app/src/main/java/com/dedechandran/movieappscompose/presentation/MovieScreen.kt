@@ -46,13 +46,3 @@ fun MovieScreen(
         }
     }
 }
-
-@ExperimentalMaterialApi
-@Composable
-fun MovieItem(modifier: Modifier = Modifier, movie: Movie) {
-    Card(
-        onClick = {
-        }
-    ) {
-    }
-}
